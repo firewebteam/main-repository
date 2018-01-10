@@ -1,0 +1,24 @@
+a = int(input("Wprowadz współczynnik a równania ax^2+bx+c: "))
+b = int(input("Wprowadz współczynnik b równania ax^2+bx+c: "))
+c = int(input("Wprowadz współczynnik c równania ax^2+bx+c: "))
+
+delta = b**2 - 4*a*c
+pier_delta=delta**(1/2)
+
+p=-b/(2*a)
+q=-delta/(4*a)
+
+if (delta<0):
+    print("Delta mniejsza od zera")
+    exit()
+if (delta==0):
+    x0 = -b/(2*a)
+    print("Miejsce zerowe funkcji wynosi: ", x0)
+    print("Wierzcholek funkcji ma wspolrzedne: ", p, q)
+    exit()
+else:
+    x1=(-b-pier_delta)/(2*a)
+    x2=(-b+pier_delta)/(2*a)
+    print("Miejsca zerowe funkcji wynoszą: ", x1, x2)
+    print("Wierzcholek funkcji ma wspolrzedne: ", p, q)
+    exit()
