@@ -24,8 +24,10 @@ class Okienko(QWidget):
         przycisk2 = QPushButton("&+", self)
         przycisk3 = QPushButton("&*", self)
         przycisk4 = QPushButton("&/", self)
-        przycisk5 = QPushButton("()^2", self)
-        przycisk6 = QPushButton("√", self)
+        przycisk5 = QPushButton("(L1)^2", self)
+        przycisk6 = QPushButton("√L1", self)
+        przycisk7 = QPushButton("L1^L2", self)
+        przycisk8 = QPushButton("|L1|", self)
 
 
         uklad = QGridLayout()
@@ -39,10 +41,12 @@ class Okienko(QWidget):
         uklad.addWidget(self.edt3, 1, 2)
         uklad.addWidget(przycisk1, 2,1)
         uklad.addWidget(przycisk2, 2, 0)
-        uklad.addWidget(przycisk3, 2, 2)
+        uklad.addWidget(przycisk3, 3, 1)
         uklad.addWidget(przycisk4, 3, 0)
-        uklad.addWidget(przycisk5, 3, 1)
+        uklad.addWidget(przycisk5, 2, 2)
         uklad.addWidget(przycisk6, 3, 2)
+        uklad.addWidget(przycisk7, 4, 0)
+        uklad.addWidget(przycisk8, 4, 1)
 
 
         self.setLayout(uklad)
@@ -53,7 +57,8 @@ class Okienko(QWidget):
         przycisk4.clicked.connect(self.dzialanie)
         przycisk5.clicked.connect(self.dzialanie)
         przycisk6.clicked.connect(self.dzialanie)
-
+        przycisk7.clicked.connect(self.dzialanie)
+        przycisk8.clicked.connect(self.dzialanie)
 
         self.setGeometry(400,500, 300, 200)
         self.setWindowTitle("Kalkulator")
@@ -87,10 +92,20 @@ class Okienko(QWidget):
                 wynik = liczba1 * liczba2
             if nadawca.text() == "&/":
                 wynik = liczba1 / liczba2
-            if nadawca.text() == "()^2":
+            if nadawca.text() == "(L1)^2":
                 wynik = liczba1**2
-            if nadawca.text() == "√":
+                self.edt2.setText("")
+            if nadawca.text() == "√L1":
                 wynik = liczba1**(1/2)
+                self.edt2.setText("")
+            if nadawca.text() == "L1^L2":
+                wynik = liczba1**liczba2
+            if nadawca.text() == "|L1|":
+                self.edt2.setText("")
+                if liczba1>0:
+                    wynik=liczba1
+                if liczba1<0:
+                    wynik=-liczba1
 
             self.edt3.setText(str(wynik))
 
