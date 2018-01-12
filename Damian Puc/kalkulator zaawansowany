@@ -10,8 +10,8 @@ class Okienko(QWidget):
 
         #et1 = QLabel("Działanie", self)
         et2 = QLabel("Pole kalkulatora", self)
-        #et3 = QLabel("Liczba 2", self)
-        #et4 = QLabel("Wynik", self)
+        et3 = QLabel("Po kazdym dziala-", self)
+        et4 = QLabel('niu kliknij "="', self)
 
 
         self.edt1 = QLineEdit()
@@ -42,9 +42,9 @@ class Okienko(QWidget):
         uklad = QGridLayout()
 
         uklad.addWidget(et2, 0, 0)
-        #uklad.addWidget(et1, 0, 1)
-        #uklad.addWidget(et3, 0, 2)
-        #uklad.addWidget(et4, 0, 3)
+        #uklad.addWidget(et1, 0, 3)
+        uklad.addWidget(et3, 0, 2)
+        uklad.addWidget(et4, 1, 2)
 
         uklad.addWidget(self.edt1, 1, 0)
         #uklad.addWidget(self.edt4, 1, 1) #dzialanie
