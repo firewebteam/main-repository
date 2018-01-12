@@ -38,6 +38,7 @@ class Okienko(QWidget):
         przycisk15= QPushButton("√", self)
         przycisk16= QPushButton("&=", self)
         przycisk17= QPushButton("CE", self)
+        przycisk18= QPushButton("<-", self)
 
         uklad = QGridLayout()
 
@@ -67,6 +68,7 @@ class Okienko(QWidget):
         uklad.addWidget(przycisk15, 3, 3)
         uklad.addWidget(przycisk16, 6, 3)
         uklad.addWidget(przycisk17, 5, 3)
+        uklad.addWidget(przycisk18, 6, 2)
 
 
         self.setLayout(uklad)
@@ -92,8 +94,9 @@ class Okienko(QWidget):
         przycisk1.clicked.connect(self.minus)
         przycisk3.clicked.connect(self.mnoz)
         przycisk4.clicked.connect(self.dziel)
-        przycisk17.clicked.connect(self.usun)
+        przycisk17.clicked.connect(self.CE)
         przycisk15.clicked.connect(self.pierwiastek)
+        przycisk18.clicked.connect(self.usun)
 
 
 
@@ -128,10 +131,13 @@ class Okienko(QWidget):
         self.edt1.setText("√")
         self.tekst = ""
         self.edt1.setText(str(self.liczba1**(1/2)))
-    def usun(self):
+    def CE(self):
         self.tekst = ""
         self.znak= ""
         self.edt1.setText("")
+    def usun(self):
+        self.tekst = self.tekst[:-1]
+        self.edt1.setText(self.tekst)
     def wynik(self):
         self.liczba2 = float(self.edt1.text())
         if(self.znak=="+"):
