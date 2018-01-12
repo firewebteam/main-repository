@@ -1,0 +1,42 @@
+kontakty = {"Kamila": 666752295, "Bartek": 519458998, "Amanda": 792297972, "£ukasz": 815369258}
+
+def numer(imie):
+    return ("Numer telefonu to: %s" % (kontakty[imie]))
+
+kontakt = ''
+while kontakt != "WyjdŸ":
+  print("Twoje kontakty:")
+  for key in kontakty:
+    print(key)
+  else:
+    print("1 - Wybierz kontakt, 2 - Dodaj kontakt, 3 - Usuñ kontakt, 4 - WyjdŸ ")
+    operacje = input("Co wybierasz? ")
+    if operacje == "1":
+     imie = input("Wpisz imiê: ")
+     if imie in kontakty:
+      print(numer(imie))
+     else:
+         print("Nie ma takiego kontaktu")
+     kontakt = input("Aby wróciæ do listy kontaktów wciœnij enter, aby wyjœæ wpisz 'WyjdŸ'")
+    if operacje == "2":
+      nowy = input("WprowadŸ imiê: ")
+      if nowy in kontakty:
+           print("Numer o takiej nazwie ju¿ istnieje")
+      nnumer = input("WprowadŸ numer: ")
+      nk = kontakty[nowy] = nnumer
+      print("Dodano nowy kontakt")
+      kontakt = input("Aby wróciæ do listy kontaktów wciœnij enter, aby wyjœæ wpisz 'WyjdŸ'")
+    elif operacje == "3":
+      usun = input("Wybierz kontakt ")
+      if usun in kontakty:
+        kontakty.pop(usun)
+        print("Kontakt zosta³ usuniêty")
+        kontakt = input("Aby wróciæ do listy kontaktów wciœnij enter, aby wyjœæ wpisz 'WyjdŸ'")
+      else:
+        print("Kontakt o takiej nazwie nie istnieje")
+        kontakt = input("Aby wróciæ do listy kontaktów wciœnij enter, aby wyjœæ wpisz 'WyjdŸ'")
+    elif operacje == "4":
+      kontakt = "WyjdŸ"
+else:
+      kontakt = "WyjdŸ"
+      print("Do zobaczenia")
