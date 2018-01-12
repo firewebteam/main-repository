@@ -1,0 +1,105 @@
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QGridLayout, QLineEdit, QPushButton, QMessageBox
+
+
+class Okienko(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.interfejs()
+
+    def interfejs(self):
+
+        et2 = QLabel("Liczba 1", self)
+        et3 = QLabel("Liczba 2", self)
+        et4 = QLabel("Wynik", self)
+
+
+        self.edt1 = QLineEdit()
+        self.edt2 = QLineEdit()
+        self.edt3 = QLineEdit()
+
+        self.edt3.readonly = True
+
+        przycisk1 = QPushButton("&-", self)
+        przycisk2 = QPushButton("&+", self)
+        przycisk3 = QPushButton("&*", self)
+        przycisk4 = QPushButton("&/", self)
+        przycisk5 = QPushButton("()^2", self)
+        przycisk6 = QPushButton("√", self)
+
+
+        uklad = QGridLayout()
+
+        uklad.addWidget(et2, 0, 0)
+        uklad.addWidget(et3, 0, 1)
+        uklad.addWidget(et4, 0, 2)
+
+        uklad.addWidget(self.edt1, 1, 0)
+        uklad.addWidget(self.edt2, 1, 1)
+        uklad.addWidget(self.edt3, 1, 2)
+        uklad.addWidget(przycisk1, 2,1)
+        uklad.addWidget(przycisk2, 2, 0)
+        uklad.addWidget(przycisk3, 2, 2)
+        uklad.addWidget(przycisk4, 3, 0)
+        uklad.addWidget(przycisk5, 3, 1)
+        uklad.addWidget(przycisk6, 3, 2)
+
+
+        self.setLayout(uklad)
+
+        przycisk1.clicked.connect(self.dzialanie)
+        przycisk2.clicked.connect(self.dzialanie)
+        przycisk3.clicked.connect(self.dzialanie)
+        przycisk4.clicked.connect(self.dzialanie)
+        przycisk5.clicked.connect(self.dzialanie)
+        przycisk6.clicked.connect(self.dzialanie)
+
+
+        self.setGeometry(400,500, 300, 200)
+        self.setWindowTitle("Kalkulator")
+        self.show()
+
+
+
+    def dzialanie(self):
+
+        nadawca = self.sender()
+
+        try:
+            if self.edt1.text()=="":
+                liczba1=0
+                self.edt1.setText("0")
+            else:
+                liczba1 = float(self.edt1.text())
+            if self.edt2.text()=="":
+                liczba2=0
+                self.edt2.setText("0")
+            else:
+                liczba2 = float(self.edt2.text())
+            wynik=""
+
+
+            if nadawca.text() == "&-":
+                wynik = liczba1 - liczba2
+            if nadawca.text() == "&+":
+                wynik = liczba1 + liczba2
+            if nadawca.text() == "&*":
+                wynik = liczba1 * liczba2
+            if nadawca.text() == "&/":
+                wynik = liczba1 / liczba2
+            if nadawca.text() == "()^2":
+                wynik = liczba1**2
+            if nadawca.text() == "√":
+                wynik = liczba1**(1/2)
+
+            self.edt3.setText(str(wynik))
+
+        except ValueError:
+            QMessageBox.warning(self, "Błąd", "Błąd danych", QMessageBox.Ok)
+
+
+if __name__ == '__main__':
+    import sys
+    app = QApplication(sys.argv)
+    okno = Okienko()
+    sys.exit(app.exec_())
