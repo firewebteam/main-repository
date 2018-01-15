@@ -1,11 +1,8 @@
-t = int(input("Wprowadü czas t:"))
-u_1 = (0,0)
+t = int(input("Wprowad≈∫ czas t:"))
 
 a = 3
 b = 2
 
-u_2 = (a,b)
+s = ((a*t)**2 + (b*t)**2) ** (1/2)
 
-s = a*t , b*t
-
-print("Jasiek przeszed≥",s,"metrÛw.")
+print("Jasiek przeszed≈Ç",s,"metr√≥w.")
