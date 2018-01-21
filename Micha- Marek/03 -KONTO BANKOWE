@@ -1,0 +1,25 @@
+login = "Arnold"
+haslo = "icra2013"
+saldo = 2130
+
+x = input("Login:")
+if x == login:
+    y = input("Hasło:")
+    if y == haslo:
+        print("Zalogowano, stan konta:", saldo)
+
+        z = input("Chcesz wypłacić(1), wpłacić(2)?")
+        if z == "1":
+            a = int(input("Ile chcesz wypłacić?"))
+            if a < saldo:
+                saldo = saldo - a
+                print("Podaną kwotę wypłacono, zostało:",saldo)
+            else:
+                print("Nie masz tylu pieniędzy")
+        elif z == "2":
+            b = int(input("Ile chcesz wpłacić?"))
+            saldo = saldo + b
+            print("Podaną kwotę wpłacono, na koncie jest:",saldo)
+
+    else:
+        print("Nieprawidłowe dane")
