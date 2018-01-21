@@ -1,0 +1,24 @@
+print('liczenie delty i wierzchołka')
+print("WZÓR - ax^2 + bx + c ")
+a = int(input('podaj a:'))
+b = int(input('podaj b:'))
+c = int(input('podaj c:'))
+
+
+delta = float((b ** 2) - (4 * a * c))
+print("delta",delta)
+if(delta < 0):
+    print("Ujemna delta")
+elif(delta == 0):
+    print("Delta = 0, miejsce zerowe :",-b/2*a)
+else:
+    x_1 = float((-b - delta ** (1 / 2)) / 2 * a)
+    x_2 = float((-b + delta ** (1 / 2)) / 2 * a)
+
+    p = float(-b / 2 * a)
+    q = float(-delta / 4 * a)
+
+    print("x1",x_1)
+    print("x2",x_2)
+    print("p",p)
+    print("p",q)
