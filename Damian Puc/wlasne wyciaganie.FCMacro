@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+# Macro Begin: C:\Users\Damian\Desktop\Freecad macra\Wyciaganie 2.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+import FreeCAD
+import Part
+from PySide import QtGui
+
+reply = QtGui.QInputDialog.getText(None, "Wysokosc","Podaj wysokosc(z): ")
+if reply[1]:
+	# user clicked OK
+	replyText = reply[0]
+	x = Gui.Selection.getSelection()
+	
+	for i in x:
+		#FreeCAD.ActiveDocument.ActiveObject.Visibility = False
+		FreeCAD.ActiveDocument.addObject("Part::Extrusion","Extrude")
+		#FreeCAD.ActiveDocument.ActiveObject.Visibility = False
+		FreeCAD.ActiveDocument.ActiveObject.Base = i
+		FreeCAD.ActiveDocument.ActiveObject.Dir = (0,0,int(replyText))
+		FreeCAD.ActiveDocument.ActiveObject.Solid = (False)
+		FreeCAD.ActiveDocument.ActiveObject.TaperAngle = (0)
+		#i.Visibility = False
+#else:
+	# user clicked Cancel
+	#replyText = reply[0] # which will be "" if they clicked Cancel 
+
+
+
+#Gui.ActiveDocument.Extrude.ShapeColor=Gui.ActiveDocument.Rectangle.ShapeColor
+#Gui.ActiveDocument.Extrude.LineColor=Gui.ActiveDocument.Rectangle.LineColor
+#Gui.ActiveDocument.Extrude.PointColor=Gui.ActiveDocument.Rectangle.PointColor
+# Macro End: C:\Users\Damian\Desktop\Freecad macra\Wyciaganie 2.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
