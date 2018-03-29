@@ -1,0 +1,83 @@
+import FreeCAD
+import Part
+from PySide import QtGui
+import math 
+
+x = FreeCADGui.Selection.getSelection()
+
+pl = FreeCAD.Placement()
+
+if FreeCAD.ActiveDocument.getObject(x[0].Label).Length>0:
+	if FreeCAD.ActiveDocument.getObject(x[0].Label).Height>0:
+		pl.Base = FreeCAD.ActiveDocument.getObject(x[0].Label).Placement.Base
+		#pl.Base = pl.Base + FreeCAD.Vector(FreeCAD.ActiveDocument.getObject(x[0].Label).Length,0,0)
+		#Draft.makeRectangle(3,3,pl)
+	if FreeCAD.ActiveDocument.getObject(x[0].Label).Height<0:
+		pl.Base = FreeCAD.ActiveDocument.getObject(x[0].Label).Placement.Base
+		pl.Base = pl.Base + FreeCAD.Vector(0,FreeCAD.ActiveDocument.getObject(x[0].Label).Height,0)
+		#Draft.makeRectangle(3,3,pl)
+
+if FreeCAD.ActiveDocument.getObject(x[0].Label).Length<0:
+	if FreeCAD.ActiveDocument.getObject(x[0].Label).Height>0:
+		pl.Base = FreeCAD.ActiveDocument.getObject(x[0].Label).Placement.Base
+		pl.Base = pl.Base + FreeCAD.Vector(FreeCAD.ActiveDocument.getObject(x[0].Label).Length,0,0)
+		#Draft.makeRectangle(3,3,pl)		
+	if FreeCAD.ActiveDocument.getObject(x[0].Label).Height<0:	
+		pl.Base = FreeCAD.ActiveDocument.getObject(x[0].Label).Placement.Base
+		pl.Base = pl.Base + FreeCAD.Vector(FreeCAD.ActiveDocument.getObject(x[0].Label).Length,FreeCAD.ActiveDocument.getObject(x[0].Label).Height,0)
+		#Draft.makeRectangle(3,3,pl)
+
+szer = int(math.fabs(FreeCAD.ActiveDocument.getObject(x[0].Label).Length))
+#wys = FreeCAD.ActiveDocument.getObject(x[0].Label).Height
+wys =  int(math.fabs(FreeCAD.ActiveDocument.getObject(x[0].Label).Height))
+a=0
+b=0
+
+for i in range(szer):
+	Draft.makeRectangle(1,1,pl)
+	pl.Base = pl.Base + FreeCAD.Vector(1,0,0.25)
+	FreeCADGui.ActiveDocument.ActiveObject.Visibility = False
+	q = FreeCAD.ActiveDocument.ActiveObject
+	FreeCAD.ActiveDocument.addObject("Part::Extrusion","Extrude")
+	FreeCAD.ActiveDocument.ActiveObject.Base = q
+	FreeCAD.ActiveDocument.ActiveObject.Dir = (0,0,0.25)
+
+
+pl.Base = pl.Base + FreeCAD.Vector(-1,1,0)
+
+for j in range(wys-1):
+	Draft.makeRectangle(1,1,pl)
+	pl.Base = pl.Base + FreeCAD.Vector(0,1,0.25) 
+	FreeCADGui.ActiveDocument.ActiveObject.Visibility = False
+	q = FreeCAD.ActiveDocument.ActiveObject
+	FreeCAD.ActiveDocument.addObject("Part::Extrusion","Extrude")
+	FreeCAD.ActiveDocument.ActiveObject.Base = q
+	FreeCAD.ActiveDocument.ActiveObject.Dir = (0,0,0.25)
+
+pl.Base = pl.Base + FreeCAD.Vector(-1,-1,0)
+
+for i in range(szer-1):
+	Draft.makeRectangle(1,1,pl)
+	pl.Base = pl.Base + FreeCAD.Vector(-1,0,0.25)
+	FreeCADGui.ActiveDocument.ActiveObject.Visibility = False
+	q = FreeCAD.ActiveDocument.ActiveObject
+	FreeCAD.ActiveDocument.addObject("Part::Extrusion","Extrude")
+	FreeCAD.ActiveDocument.ActiveObject.Base = q
+	FreeCAD.ActiveDocument.ActiveObject.Dir = (0,0,0.25)
+
+pl.Base = pl.Base + FreeCAD.Vector(1,-1,0)
+
+for j in range(wys-1):
+	Draft.makeRectangle(1,1,pl)
+	pl.Base = pl.Base + FreeCAD.Vector(0,-1,0.25) 
+	FreeCADGui.ActiveDocument.ActiveObject.Visibility = False
+	q = FreeCAD.ActiveDocument.ActiveObject
+	FreeCAD.ActiveDocument.addObject("Part::Extrusion","Extrude")
+	FreeCAD.ActiveDocument.ActiveObject.Base = q
+	FreeCAD.ActiveDocument.ActiveObject.Dir = (0,0,0.25)
+#pl.Base = FreeCAD.ActiveDocument.getObject(x[0].Label).Placement.Base
+#pl.Base = pl.Base + FreeCAD.Vector(FreeCAD.ActiveDocument.getObject(x[0].Label).Length,FreeCAD.ActiveDocument.getObject(x[0].Label).Height,0)
+#Draft.makeRectangle(3,3,pl)
+
+#FreeCAD.ActiveDocument.Rectangle002.Placement.Base
+#FreeCAD.ActiveDocument.getObject("Rectangle").Placement.Base
