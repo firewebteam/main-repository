@@ -1,0 +1,28 @@
+a = int(input("podaj a"))
+if a==0:##jesli a=0 to nie mamy paraboli, nie ma co liczyc
+    print("a=0, nic z tego nie bedzie")
+    exit()
+b = int(input("podaj b"))
+c = int(input("podaj c"))
+
+
+d=b*b-4*a*c ##d = delta
+
+if d<0:
+    print("delta < 0, nie ma rozwiązań")
+elif d==0:
+    print("delta = 0, jedno miejsce zerowe : x0 = ",b*(-1)/2*a)
+else:
+    print("delta > 0, dwa rozwiązania : ""x1=",(b*(-1)+d**0.5)/2*a,", x2=",(b*(-1)-d**0.5)/2*a  )
+
+p=b*(-1)/2*a ## x wierzchołka
+i=0 ##licznik
+sum=0 ##wartosc funkcji w wierzchołku
+tab = [a,b,c] #wspolczynniki wielomianu w tabeli
+while i<len(tab): ##algorytm hornera obliczania wartosci wielomianu w wierzchołku p
+    sum *= p
+    sum+=tab[i]
+    i+=1
+
+print("współrzędne wierzchołka paraboli : p=",p,", f(p)=" , sum )
+

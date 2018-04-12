@@ -1,0 +1,8 @@
+t = int(input("Wprowadź czas t:"))
+
+a = 3
+b = 2
+
+s = ((a*t)**2 + (b*t)**2) ** (1/2)
+
+print("Jasiek przeszedł",s,"metrów.")

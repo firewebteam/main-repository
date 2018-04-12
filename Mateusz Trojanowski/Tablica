@@ -1,0 +1,27 @@
+tablica = [" Mateusz " , "Kinga" , "Piotrek "]
+print(tablica)
+tablica.sort()
+print(tablica)
+
+
+tablica = [["Mateusz " ,19] , ["Kinga" , 19] , ["Piotrek", 20]  ]
+średnia = (tablica [0][1] + tablica [1][1] + tablica [2][1])/3
+print(średnia)
+
+tablica[0][0]
+print(tablica[0][0])
+tablica[1][0]
+print(tablica [1][0] )
+tablica[2][0]
+print(tablica[2][0])
+tablica.sort()
+print(tablica)
+tablica.reverse()
+print(tablica)
+
+tablica_1 = [ "Piotrek" , "Kinga" , "Mateusz "]
+print(tablica_1)
+tablica_1.sort(key=len)
+print(tablica_1)
+tablica_1.reserve()
+print(tablica_1)

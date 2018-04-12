@@ -1,0 +1,14 @@
+#1
+tablica = ["Tomek","Ada","Julia"]
+print ("1.1",(tablica))
+tablica.sort()
+print (1.2,(tablica))
+
+#2
+lista_ob = [["Tomek",13],["Ada",9],["Julia",12]]
+
+print ("2.1",(lista_ob))
+
+x = (lista_ob[0][1] + lista_ob[1][1] + lista_ob[2][1]) / len(lista_ob)
+
+print ("2.2 Sredni wiek to:",(x))

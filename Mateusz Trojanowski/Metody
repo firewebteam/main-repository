@@ -1,0 +1,36 @@
+def równania ( x , y) :
+    print ("Pole prostokąta wynosi" , x*y)
+    print ("Pole trójkąta prostokątnego wynosi " , (x*y)/2 )
+
+równania (6,8)
+
+def równania (x,h) :
+    print("Pole rombu wynosi" , x*h )
+
+równania (4 ,5)
+
+def równania (a,b,h) :
+    print ("Pole trapezu wynosi ", ((a+b)*h)/2)
+
+równania (2,3,4)
+
+class Critter():
+
+    '''Figury i kolory '''
+
+    def ___init___(self, kolor):
+        self.kolor = kolor
+
+    def talk(self):
+        print("Prostokąt ma kolor", self.kolor )
+
+crit1 = Critter("czerwony")
+crit2 = Critter("niebieski")
+
+
+crit1.talk()
+crit2.talk()
+
+print ( " Wyświetlanie wartości kolor ")
+
+print (crit1.kolor)

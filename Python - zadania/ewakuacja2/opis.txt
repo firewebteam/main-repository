@@ -1,0 +1,17 @@
+Zadanie bardzo podobne to tego co już było. Chodzi o obliczenie czasu ewakuacji z budynku. 
+Tym razem jedak nie losujemy pedestrianów a wczytujemy je z pliku eggman.json. Format json już w zasadzie znacie. 
+Pojawił się on w currency. Zatem to co robimy. Tworzymy klasę Evacue oraz klasę Evacuees. W json mamy konfigurację dla 
+27 Evacuees. Zatem tworzycie tyle osób Na razie pojedynczy Evacue posiada tylko parametry: 
+1. PRE_EVACUATION - czyli ile zwleka po ogłoszeniu alarmu,
+2. H_SPEED - prędkość na poziomej drodze, typu korytarz, pokój, 
+3. V_SPEED - prędkość na pionowej drodze, typu schody
+
+Zadanie to obliczenie czasu ewakuacji. Każdemu z Evacuees losujecie długość przejścia poziomego h_distance.
+Następnie liczycie czas ewakuacji jako:
+PRE_EVACUATION + h_distance/H_SPEED + v_distance/V_SPEED
+
+v_distance 12 m. 
+
+Oliczyć czas ewakuacji ostatniej osoby. 
+
+Powodzenia. 

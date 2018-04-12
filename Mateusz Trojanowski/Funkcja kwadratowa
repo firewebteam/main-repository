@@ -1,0 +1,20 @@
+a = int(input (" Wpisz a : "))
+if a==0 :
+    print ("Kiedy a = 0 to nie mamy funkcji kwadratowej ")
+    exit ()
+b = int(input("Wpisz b: "))
+c = int(input("Wpisz c: "))
+
+d = b*b-4*a*c
+
+if d<0:
+    print ("Delta < 0 , równanie nie posiada rozwiązań ")
+elif d==0:
+    print ("Delta = 0 , równanie ma jedno rozwiązanie x0 =" , int(b* (-1)/2*a))
+else :
+    print ("Delta >0 , równanie ma dwa rozwiązania : ""x1=" , int((b*(-1)+d**0.5)/2*a) ,"x2=",int((b*(-1)-d**0.5)/2*a))
+
+p=b*(-1)/2*a
+fp=d*(-1)/4*a
+
+print("Współrzędne wierzchołka - punktu p : p=" , int(p) , " , f(p)=" , int (fp),)

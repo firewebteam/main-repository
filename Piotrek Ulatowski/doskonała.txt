@@ -1,0 +1,15 @@
+niedoskonale = []
+doskonale = []
+X = 1
+n = 1
+while True:
+    X += 2 ** n
+    do = int(X / 2)
+    for i in range(3, do, 2):
+        if X % i == 0:
+            niedoskonale.append(X)
+    if niedoskonale.count(X) == 0:
+        print(X * (2 ** n))
+        doskonale.append(X * (2 ** n))
+
+    n += 1

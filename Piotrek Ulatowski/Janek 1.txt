@@ -1,0 +1,6 @@
+t = int(input ("WprowadŸ czas t:"))
+
+v = 3.8
+
+s = v * t
+print("Jasiek przeszed³",s,"metrów.")

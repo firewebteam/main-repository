@@ -1,0 +1,11 @@
+def nLiczby(nLiczbaOd, nLiczbaDo):
+ nLista = []
+ for i in range(2, nLiczbaDo):
+     for x in range(2,i):
+         if i % x == 0:
+             break
+     else:
+         nLista.append(i)
+ print ('Liczby pierwsze to: ', nLista)
+
+nLiczby(1, 100)

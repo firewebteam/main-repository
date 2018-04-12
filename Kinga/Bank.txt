@@ -1,0 +1,34 @@
+login = "Arnold"
+has³o = "icra2013"
+saldo = 2130
+
+log = input("WprowadŸ login: ")
+has = input("WprowadŸ has³o: ")
+print("Zosta³aœ/eœ poprawnie zalogowany. Witaj na swoim koncie")
+operacja = "nie"
+while operacja == "nie":
+    if log == login and has == has³o:
+        print("ok")
+        print("operacje: 1 = wp³aæ, 2 = wyp³aæ, 3 = sprawdŸ saldo")
+        operacja = input("1 = wp³aæ, 2 = wyp³aæ, 3 = sprawdŸ saldo")
+        if operacja == "1":
+            print("wp³acam")
+            w = int(input("WprowadŸ krotê: "))
+            print("Saldo Twojego konta po wyp³acie: ", int(saldo+w) ,"z³otych")
+
+        if operacja == "2":
+            print("wyp³acam")
+            p = int(input("WprowadŸ kwotê: "))
+            print("Saldo Twojego konta po wyp³acie: ", int(saldo-p) ,"z³otych")
+
+        if operacja == "3":
+            print("sprawdzam saldo")
+            print(saldo)
+
+    else:
+        print("B³¹d")
+
+    operacja = input("Wylogowaæ (tak/nie)?")
+
+
+print("Do widzenia.")

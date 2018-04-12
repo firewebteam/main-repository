@@ -1,0 +1,13 @@
+tablica = [["Piotrek", 20], ["Kinga", 19], ["Mateusz", 19]]
+tablica.sort()
+print(tablica)
+suma = (tablica[0][1] + tablica[1][1] + tablica[2][1])
+print(suma)
+srednia = (suma/3)
+print(srednia)
+
+
+tab = ["Piotrek", "Kinga", "Mateusz"]
+print(tab)
+tab.sort(key=len, reverse=True);
+print(tab)

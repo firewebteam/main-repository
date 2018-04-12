@@ -1,0 +1,30 @@
+s = 2130
+print('Witaj w banku "SGSP Studenci" ')
+login = input('Podaj swóje imiê: ')
+haslo = input('Podaj has³o: ')
+op = "nie"
+while op == "nie":
+ if login == 'Arnold' and haslo == 'icra2013':
+    print('Zalogowa³eœ siê poprawnie')
+    print('Co chcesz zrobiæ? ')
+    print("1.Saldo konta","2.Wp³ata gotówki","3.Wyp³ata gotówki")
+    wartosc = input('Któr¹ opcje wybierasz: ')
+    if wartosc == '1':
+        print('Saldo konta wynosi',s,"z³otych")
+    if wartosc == '2':
+        w = int(input('Podaj kwotê jak¹ chcesz wp³aciæ: '))
+        print('Saldo Twojego konta po wp³acie wynosi',int(s+w),'z³otych')
+    if wartosc == '3':
+        j = int(input('Podaj kwotê jak¹ chcesz wyp³aciæ: '))
+        if (s<j):
+            print("Masz za ma³o œrodków na koncie. Powinieneœ iœæ do pracy!")
+        elif (s>j):
+            print('Transakcja sfinalizowana, na koncie pozosta³o', int(s-j),'z³otych')
+        elif (s == j):
+            print("Wyp³aci³eœ wszystko z konta")
+
+
+ else:
+    print('B³êdne dane logowania')
+ op = input("Wylogowaæ (tak/nie)? ")
+print("Dziêkujemy za skorzystanie z naszych us³ug. Dowidzenia. ¯yczymy mi³ego dnia.")

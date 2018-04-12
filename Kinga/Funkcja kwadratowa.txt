@@ -1,0 +1,19 @@
+a = int(input("WprowadŸ wartoœæ a:"))
+if a ==0:
+    print ("Dla a równego 0 otrzymujemy funkcjê liniow¹")
+    exit()
+b = int(input("WprowadŸ wartoœæ b:"))
+c = int(input("WprowadŸ wartoœæ c:"))
+d = b*b-4*a*c
+print ("Delta równa siê d:", d)
+x1 = ((b*(-1)+d**0.5)/2*a)
+x2 = ((b*(-1)-d**0.5)/2*a)
+if d < 0:
+    print ("Gdy delta jest mniejsza od 0 to funkcja nie ma miejsc zerowych")
+elif d == 0:
+    print ("Gdy delta jest równa 0 funkcja ma jedno miejsce zerowe: x0 = " ,int(b*(-1)/2*a))
+else:
+    print ("Gdy delta jest wiêksza od 0 funkcja ma dwa miejsca zerowe: x1 = " , x1 ," x2 = " , x2)
+p = b*(-1)/2*a
+q = d*(-1)/4*a
+print ("Wspó³rzêdne wierzcho³ka paraboli: p = ", p , " q = " , q)

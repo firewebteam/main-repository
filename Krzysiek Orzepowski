@@ -1,0 +1,32 @@
+# y=ax^2+bx+c
+
+zero = 0
+a = 1
+b = 5
+c = 2
+delta = ((b**2)-(4*a*c))
+print ("delta = ", delta)
+
+#wierzchołek
+p = -(b/(a*2))
+q = -(delta/(a*4))
+
+print ("Wspólrzędne wierzchołka funkcji: ", "(",p,";", q,")")
+
+
+#miejsca zerowe
+if delta<zero:
+    print ("Delta jest mniejsza od zera. Brak rozwiązań.")
+
+
+
+if delta==zero:
+
+    print ("x1 = ", p)
+
+if delta>zero:
+
+    x_1 = round ((((- b) + (delta**(1/2)))/(a*2)),2)
+    x_2 = round ((((- b) + (delta**(1/2)))/(a*2)),2)
+    print ("x1 = ", x_1)
+    print ("x2 = ", x_2)

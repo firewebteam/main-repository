@@ -1,0 +1,31 @@
+class figury():
+    def __init__(self, kolor, x, y):
+        self.kolor = kolor
+        self.x = x
+        self.y = y
+
+    def prostok¹t(self):
+        print("Kolor prostok¹ta to", self.kolor)
+        print("Pole prostok¹ta wynosi", self.x * self.y)
+
+    def trójk¹t(self):
+        print("Kolor trójk¹ta prostok¹tnego to", self.kolor)
+        print("Pole trójk¹ta prostok¹tnego wynosi", (self.x * self.y)/2 )
+
+    def trapez(self):
+        print("Kolor trapezu to", self.kolor)
+        print("Pole trapezu wynosi", self.x * self.y)
+
+    def romb(self):
+        print("Kolor rombu to", self.kolor)
+        print("Pole rombu wynosi", ((self.x + self.y)/2)*10)
+
+prostokat = figury("¯ó³ty", 3, 9)
+trojkat = figury("Zielony", 3, 4)
+trapez = figury("Czerwony", 7, 9)
+romb = figury("Niebieski", 5, 5)
+
+prostokat.prostok¹t()
+trojkat.trójk¹t()
+trapez.trapez()
+romb.romb()

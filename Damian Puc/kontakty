@@ -1,0 +1,29 @@
+def znajdz_numer():
+    while True:
+        x = input("Wprowadź imie: ")
+        if x in tel:
+            print("Numer uzytkownika o imieniu '",x,"' to: ",tel[x])
+            break
+        else:
+            print("Zle imie, podaj jeszcze raz: ")
+
+def dodaj():
+    x = input("Wprowadź imie ")
+    y = int(input("Wprowadź numer"))
+    tel[x]=y
+def koniec():
+    exit()
+
+
+switcher = {1: dodaj, 2: znajdz_numer, 3: koniec,}
+
+tel = {'jack': 4098, 'sape': 4139}
+print(tel)
+
+
+while True:
+    x = int(input("1 - wprowadz nr, 2 - uzyskaj nr, 3-zakoncz:"))
+    if x not in switcher.keys():
+        print("Zly nr")
+        continue
+    switcher[x]()

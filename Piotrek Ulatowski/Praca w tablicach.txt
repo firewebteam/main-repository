@@ -1,0 +1,17 @@
+tab = ["Kinga","Piotr","Mateusz","Micha³"]
+tab.sort()
+print(tab)
+
+tablica = [["Kinga",19],["Piotr",20],["Mateusz",19],["Micha³",21]]
+tablica[0][1]
+tablica[1][1]
+tablica[2][1]
+tablica[3][1]
+
+srednia = (tablica[0][1] + tablica[1][1] + tablica[2][1] + tablica[3][1]) / 4
+print(srednia)
+
+aList = ["Kinga","Piotr","Mateusz","Micha³","S³awomir xD"]
+aList.sort(key=len, reverse=True);
+print (aList)
+

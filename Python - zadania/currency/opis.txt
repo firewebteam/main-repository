@@ -1,0 +1,13 @@
+1. Wersja prostsza
+  W pliku dane.py znajduje się słownik z aktualnym kursem walut. Mamy 100 Euro w kieszeni. Proszę napisać progam, 
+  który nam policzy ile możemy kupić za to innych walut. 
+2. Wersja trudniejsza.
+  Aktualne kursy walut pobieramy ze strony: http://api.fixer.io/latest
+  Aby pobrać dane ze strony potrzebne będą biblioteki: 
+  
+  from urllib.request import urlopen
+  import json
+  
+  z tych bibliotek bierzecie urlopen(), json.loads(), read() decode()
+  
+  

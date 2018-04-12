@@ -1,0 +1,34 @@
+class Figury:
+
+    def trojkąt(self):
+        print("Kolor trojkata:", self.kolor)
+        print("Pole trojkata wynosi:", self.x*self.y/2)
+
+    def trapez(self):
+        print("Kolor trapezu:", self.kolor)
+        print("Pole trapezu wynosi:", (self.x+self.y)*10/2)
+
+    def prostokąt(self):
+        print("Kolor prostokata:", self.kolor)
+        print("Pole prostakata wynosi:", self.x*self.y)
+
+trojkąt = Figury()
+trojkąt.kolor = "czerwony"
+trojkąt.x = 4
+trojkąt.y = 4
+
+trapez = Figury()
+trapez.kolor = "niebieski"
+trapez.x = 5
+trapez.y = 5
+
+prostokąt = Figury()
+prostokąt.kolor = "brązowy"
+prostokąt.x = 6
+prostokąt.y = 6
+
+trojkąt.trojkąt()
+print("")
+trapez.trapez()
+print("")
+prostokąt.prostokąt()

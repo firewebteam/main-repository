@@ -1,0 +1,38 @@
+kontakty = {"Andrzej": 609075682, "Ania": 698535535, "Aœka": 888552762, "Dominika": 603436478, "Elwira": 664190547, "Janek": 605233823, "Mateusz": 794100004, "Tomek": 663853590}
+
+def numery(imie):
+   return("Numer telefonu to: %s" %(kontakty[imie]))
+
+lk = ''
+while lk != "koniec":
+  print("Lista Kontaktów:")
+  for key in kontakty:
+    print(key)
+  else:
+    print("Co chcesz zrobiæ? A - wyœwietliæ numer, B - dodaæ nowy kontakt, C - usun¹æ bie¿¹cy kontakt, D - wyjœæ ")
+    wybor = input("Czynnoœæ: ")
+    if wybor == "A":
+     imie = input("Podaj imiê: ")
+     if imie in kontakty:
+      print(numery(imie))
+     lk = input("Jeœli chcesz ponownie wyœwietliæ listê kontaktów wciœnij enter, a jeœli nie to wpisz 'koniec'")
+    if wybor == "B":
+      nimie = input("Wpisz imiê: ")
+      nnumer = input("Podaj numer: ")
+      nelement = kontakty[nimie] = nnumer
+      print("Kontakt dodano")
+      lk = input("Jeœli chcesz ponownie wyœwietliæ listê kontaktów wciœnij enter, a jeœli nie to wpisz 'koniec'")
+    elif wybor == "C":
+      delete = input("Który kontakt chcesz usun¹æ? ")
+      if delete in kontakty:
+        kontakty.pop(delete)
+        print("Kontakt usuniêto")
+        lk = input("Jeœli chcesz ponownie wyœwietliæ listê kontaktów wciœnij enter, a jeœli nie to wpisz 'koniec'")
+      else:
+        print("Nie ma takiego kontaktu.")
+        lk = input("Jeœli chcesz ponownie wyœwietliæ listê kontaktów wciœnij enter, a jeœli nie to wpisz 'koniec'")
+    elif wybor == "D":
+      lk = "koniec"
+else:
+      lk = "koniec"
+      print("Do zobaczenia")
