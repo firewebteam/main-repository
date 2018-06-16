@@ -37,7 +37,7 @@ Opiekun koła:
 Zarząd koła:
 ----------------------------
 
-- st. ogn. pchor. Arkadiusz Jelonek - prezes
-- sekc. pchor. Hubert Zawistowski - wiceprezes
-- sekc. pchor. Wojciech Kowalski - sekretarz
+- pchor. Hubert Zawistowski - prezes, 
+- pchor. Mateusz Mackiewicz - wiceprezes, 
+- pchor. Kamil Kołodziej - sekretarz.
 
