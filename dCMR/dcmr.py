@@ -34,6 +34,8 @@ class Dcmr():
                 mail['From'] = self.parts[0][0]
                 mail['To'] = i[0]
                 s = smtplib.SMTP(self.host)
+                s.starttls()
+                s.login(self.parts[0][0], '57tiGEr175')
                 s.send_message(mail)
                 s.quit()
 
